@@ -6,7 +6,7 @@ import { GlassButton } from "../components/ui/GlassButton";
 import { GlassInput } from "../components/ui/GlassInput";
 import { useState } from "react";
 import { format } from "date-fns";
-import { MapPin, Calendar, Tag } from "lucide-react";
+import { MapPin, Calendar } from "lucide-react";
 
 import { useAuthStore } from "../lib/store";
 import { Plus } from "lucide-react";

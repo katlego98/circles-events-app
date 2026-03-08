@@ -26,7 +26,7 @@ export const CreateEventPage = () => {
   const { id } = useParams<{ id: string }>();
   const isEditMode = !!id;
   const { register, handleSubmit, reset, formState: { errors, isSubmitting } } = useForm<CreateEventForm>({
-    resolver: zodResolver(schema),
+    resolver: zodResolver(schema) as any,
   });
   const navigate = useNavigate();
 
@@ -79,7 +79,7 @@ export const CreateEventPage = () => {
     <div className="max-w-2xl mx-auto py-8">
       <GlassCard>
         <h2 className="text-2xl font-bold mb-6 text-white">{isEditMode ? "Edit Event" : "Create New Event"}</h2>
-        <form onSubmit={handleSubmit<CreateEventForm>(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <GlassInput label="Title" {...register("title")} error={errors.title?.message} data-testid="event-title-input" />
           <GlassInput label="Description" {...register("description")} error={errors.description?.message} data-testid="event-description-input" />
           

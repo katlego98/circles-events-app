@@ -1,7 +1,7 @@
 import { Link, useNavigate, Outlet } from "react-router-dom";
 import { useAuthStore } from "../lib/store";
 import { GlassButton } from "./ui/GlassButton";
-import { LogOut, User, Calendar, Plus, Ticket } from "lucide-react";
+import { LogOut, Calendar, Ticket } from "lucide-react";
 
 export const Navbar = () => {
   const { user, logout, isHydrated } = useAuthStore();

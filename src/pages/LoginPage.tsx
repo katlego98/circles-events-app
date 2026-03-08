@@ -7,7 +7,6 @@ import { useAuthStore } from "../lib/store";
 import { GlassCard } from "../components/ui/GlassCard";
 import { GlassInput } from "../components/ui/GlassInput";
 import { GlassButton } from "../components/ui/GlassButton";
-import type { User } from "../lib/types";
 
 const schema = z.object({
   email: z.string().trim().email().max(255),

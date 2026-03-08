@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Layout } from "./components/Layout";
 import { LandingPage } from "./pages/LandingPage";
@@ -8,12 +8,12 @@ import { RegisterPage } from "./pages/RegisterPage";
 import { EventDetailsPage } from "./pages/EventDetailsPage";
 import { CreateEventPage } from "./pages/CreateEventPage";
 import { BookingsPage } from "./pages/BookingsPage";
-import { useEffect } from "react";
 import { useAuthStore } from "./lib/store";
+import React from "react";
 
 const queryClient = new QueryClient();
 
-const ProtectedRoute = ({ children, role }: { children: JSX.Element; role?: 'ORGANIZER' }) => {
+const ProtectedRoute = ({ children, role }: { children: React.ReactElement; role?: 'ORGANIZER' }) => {
   const { user, isHydrated } = useAuthStore();
   
   if (!isHydrated) {
